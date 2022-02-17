@@ -1,0 +1,20 @@
+<br>
+<h1 class="text-center my-4">List show</h1>
+
+<div class="container">
+  <strong><%= @list.name %></strong>
+  <br>
+  <br>
+
+  <ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li><%= bookmark.movie.title %>  -<%= link_to "Delete", "#" %></li>
+  <% end %>
+  </ul>
+
+  <br>
+  <%= link_to "Add a movie to this list", new_list_bookmark_path(@list) %>
+
+  <br>
+<%= link_to "Return to all lists", lists_path %>
+</div>
